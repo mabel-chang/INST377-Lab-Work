@@ -240,6 +240,7 @@ div.carousel {
     - ... there's a reason crop tools are popular in image editors
    */
   width: 150px; 
+  height: 150px;
 }
 
 .prev,
@@ -258,10 +259,12 @@ div.carousel {
 .prev:focus,
 .next:focus {
   margin: 0;
+  border: 2px solid rgb(99,99,99);
   /* Pick a good border colour and check out how it works with your buttons */
 }
 
 .prev:hover,
 .next:hover {
+  background:rgb(246, 169, 93)
   /* Pick a good background colour for your hover pseudoclass */
 }

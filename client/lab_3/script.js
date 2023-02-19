@@ -20,44 +20,43 @@ const totalSlides = slidesArray.length;
 
 function updateSlidePosition() {
   slidesArray.forEach(slide => {
+    // loop through all the slides in your slideArray
     slide.classList.remove('visible');
+    // and remove the 'visible' class from each classList
     slide.classList.add('hidden');
+    // then add a class 'hidden' to all of them
   });
 
-  slides[slidePosition].classList.add('visible');
-
-  // Using the .forEach array method, (array.forEach((element) => { per-element work goes here }))
-  // loop through all the slides in your slideArray
-  // and remove the 'visible' class from each classList
-  // then add a class 'hidden' to all of them
-
-  // outside your .forEach,
-  // add a 'visible' class to the slide at the current slidePosition in slides
+  console.log(slidePosition)
+  slides[slidePosition].classList.add('visible'); 
+  // add a 'visible' class to the slide at the current slidePosition in slides 
 }
 
+updateSlidePosition();
+
 function moveToNextSlide() {
-  /*
-    add an if statement here that checks
-    if you're already at the max number of slides
-    and if so, sets your slidePosition to the first index of an array
-    if not, set the slidePosition to the current position plus one
-  */
-  if(slidePosition == totalSlides){
+  if(slidePosition == totalSlides - 1){
+    // if you're already at the max number of slides
     slidePosition = 0;
+    // sets your slidePosition to the first index of an array
   } else {
     slidePosition += 1;
+    // set the slidePosition to the current position plus one
   }
 
   updateSlidePosition(); // this is how you call a function within a function
 }
+
 function moveToPrevSlide() {
-  // add your code in here for when you click the "prev" button
-  /*
-    add an if statement here that checks
-    if you're already at the first index position for an array
-    and if so, sets your slidePosition to the last slide position in totalSlides
-    if not, set the slidePosition to the current position minus one
-  */
+  if(slidePosition == 0){
+    //if you're already at the first index position for an array
+    slidePosition = totalSlides - 1;
+    //sets your slidePosition to the last slide position in totalSlides
+  } else {
+    slidePosition -= 1;
+    //set the slidePosition to the current position minus one
+  }
+
   updateSlidePosition();
 }
 
@@ -71,5 +70,8 @@ document.querySelector('.next') // Get the appropriate element (<button class="n
     moveToNextSlide(); // call the function above to handle this
   });
 
-// Paying close attention to the above queryselector, write one that fires
-// when you want a "prev" slide
+document.querySelector('.prev')
+  .addEventListener('click', () => {
+      console.log('clicked prev');
+      moveToPrevSlide();
+  });
