@@ -8,7 +8,7 @@
 */
 
 html {
-  background-color: #fff;
+  background-color: #000000;
   font-size: 16px;
   min-width: 300px;
   overflow-x: hidden;
@@ -30,7 +30,7 @@ body {
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  background-color: rgb(239, 239, 239);
+  background-color: rgb(0, 0, 0);
 }
 
 
@@ -39,14 +39,14 @@ a {
   text-decoration: none;
 }
 
-h2 {
+h2, h3 {
   margin:0;
   padding:0;
   padding-bottom:1.5rem;
 }
 
 form {
-  accent-color: hsla(120, 100%, 50%, 0.482);
+  accent-color: hsl(64, 100%, 50%);
 }
 
 /*
@@ -55,7 +55,6 @@ form {
   - like this: <div class="wrapper">
   - note that the period vanishes there!
 */
-
 
 .wrapper {
   min-height: 100vh;
@@ -71,6 +70,7 @@ form {
   justify-content: space-evenly;
   align-items: start;
   flex:1;
+  background-color: #5e5e81;
 }
 
 .header {
@@ -135,11 +135,15 @@ form {
 }
 
 .right_section {
-  background-color: rgba(255, 224, 138, 0.7);
+  /*max-width: 450px;
+  specific width mentioned in lecutre but does not directly match lab assignment page*/
+  background-color: rgba(138, 255, 220, 0.7);
   flex: 1 2 auto;
   margin: 1rem;
-  align-items: center;
-  max-width: 450px;
+  align-items: center; /*flex-start in media mode*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /*
@@ -214,5 +218,33 @@ form label {
     /* check it out by using your developer tools to shrink your screen-size */
     .container {
       background-color: rgba(204, 8, 162, 0.65);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0 20px;
+      display: flex;
+      flex:1;
+    }
+    
+    .left_section {
+      background-color: rgba(0, 139, 139, 0.8);
+      flex: 0 1 auto;
+      margin: 1rem;
+      padding: 1.5rem;
+      width: 94%;
+      height: 235px;
+    }
+    
+    .right_section {
+      /*max-width: 450px;
+      specific width mentioned in lecutre but does not directly match lab assignment page*/
+      background-color: rgba(138, 255, 220, 0.7);
+      flex: 1 2 auto;
+      margin: 1rem;
+      align-items: flex-start; /*flex-start in media mode*/
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 94%;
     }
 }
