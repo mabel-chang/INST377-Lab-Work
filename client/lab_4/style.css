@@ -29,7 +29,7 @@ body {
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  background-color: hsl(240, 15%, 33%);
+  background-color: hsl(251, 71%, 81%);
 }
 
 a {
@@ -44,7 +44,7 @@ h2, h3 {
 }
 
 form {
-  accent-color: hsl(64, 100%, 50%);
+  accent-color: hsl(129, 100%, 50%);
 }
 
 /*
@@ -87,7 +87,7 @@ form {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: hsl(240, 29%, 64%);
+  background-color: hsl(234, 100%, 79%);
   color: #000000;
 
   /* shapes */
@@ -111,7 +111,7 @@ form {
 */
 
 .box {
-  background-color: rgba(255, 255, 255, 0.555);
+  background-color: rgba(255, 255, 255, 0.271);
   border: 2px dashed;
   border-radius: 4px;
 
@@ -122,7 +122,7 @@ form {
 }
 
 .left_section {
-  background-color: hsl(257, 58%, 69%);
+  background-color: hsl(257, 52%, 70%);
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
@@ -131,7 +131,7 @@ form {
 .right_section {
   /*max-width: 450px;
   specific width mentioned in lecutre but does not directly match lab assignment page*/
-  background-color: hsl(257, 64%, 58%);
+  background-color: hsl(257, 65%, 60%);
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center; /*flex-start in media mode*/
@@ -149,7 +149,7 @@ form {
 .footer {
   flex-shrink: 0;
   padding: 1rem;
-  background-color: hsl(257, 18%, 52%);
+  background-color: hsl(256, 31%, 32%);
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -219,7 +219,7 @@ form label {
     }
     
     .box {
-      background-color: rgba(255, 255, 255, 0.555);
+      background-color: rgba(255, 255, 255, 0.271);
       border: 2px dashed;
       border-radius: 4px;
     
@@ -230,7 +230,7 @@ form label {
     }
 
     .left_section {
-      background-color: hsl(257, 58%, 69%);
+      background-color: hsl(257, 52%, 70%);
       flex: 0 1 auto;
       margin: 1rem;
       padding: 1.5rem;
@@ -240,7 +240,7 @@ form label {
     .right_section {
       /*max-width: 450px;
       specific width mentioned in lecutre but does not directly match lab assignment page*/
-      background-color: hsl(257, 64%, 58%);
+      background-color: hsl(257, 65%, 60%);
       flex: 1 2 auto;
       margin: 1rem;
       align-items: flex-start; /*flex-start in media mode*/
