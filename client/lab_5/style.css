@@ -148,6 +148,7 @@
   */
   
   .footer {
+    position: fixed;
     flex-shrink: 0;
     padding: 1rem;
     background-color: hsl(256, 31%, 32%);
