@@ -123,6 +123,8 @@ async function mainEvent() {
     console.log('clear browser data');
     localStorage.clear();
     console.log('localStorage check', localStorage.getItem("storedData"));
+    generateListButton.classList.add("hidden");
+
   })
 }
 
