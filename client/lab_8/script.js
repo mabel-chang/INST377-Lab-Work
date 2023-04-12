@@ -55,10 +55,25 @@ function markerPlace(array, map){
 
   array.forEach((item) => {
     console.log('markerPlace', item);
-    const {coordinates} = item.geocoded_column_1;
-    
-    L.marker([coordinates[1], coordinates[0]]).addTo(map);
+    if (item.geocoded_column_1){
+      const {coordinates} = item.geocoded_column_1;
+      L.marker([coordinates[1], coordinates[0]]).addTo(map);
+    }
   })
+}
+
+function setViewWindow(array, map){
+  console.log('First Resto: ', array[0]);
+  let carto = map;
+
+  if (array[0].geocoded_column_1){
+    const {coordinates} = array[0].geocoded_column_1;
+    carto = map.setView([coordinates[1], coordinates[0]], 13); //long, lat
+  } else {
+    carto = map.setView([38.98, -76.93], 13); // set view to college park
+  }
+  
+  return carto;
 }
 
 async function mainEvent() {
@@ -108,15 +123,17 @@ async function mainEvent() {
     console.log(currentList);
     injectHTML(currentList);
     markerPlace(currentList, carto);
+    setViewWindow(currentList, carto);
   });
 
   textField.addEventListener("input", (event) => {
-    console.log("input", event.target.value);
+    console.log("INPUT", event.target.value);
     const newList = filterList(currentList, event.target.value);
-
-    console.log(newList);
+    
     injectHTML(newList);
+    console.log(newList);
     markerPlace(newList, carto);
+    setViewWindow(newList, carto);
   });
 
   clearDataButton.addEventListener("click", (event) => {
@@ -124,7 +141,6 @@ async function mainEvent() {
     localStorage.clear();
     console.log('localStorage check', localStorage.getItem("storedData"));
     generateListButton.classList.add("hidden");
-
   })
 }
 
